@@ -1,0 +1,16 @@
+{% extends "search.html" %}
+
+{% block results %}
+  <div id="examples">
+    <h2>Examples:</h2>
+    {% for example in 
+      [
+        'title:"The Relationship Between Daily Life Stress and Gastrointestinal Symptoms in Women with Irritable Bowel Syndrome"',
+        'publicationDate:2011-06-01',
+        'doi:"10.1007/s10495-010-0556-y", publicationName:Apoptosis'
+      ]
+    %}
+      <p><a href="/search?query={{ example | quote }}">{{ example }}</a></p>
+    {% endfor %}
+  </div>
+{% endblock %}

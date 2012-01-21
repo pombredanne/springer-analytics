@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block body %}
+  <div class="container_16">
+    
+    <form id="query_form" method="GET" action="/search">
+      <div class="grid_14">
+	<input id="query" name="query" value="{{ request.args["query"] }}">
+      </div>
+      <div class="grid_2">
+	<input id="submit" type="submit" value="Search">
+      </div>
+    </form>
+    
+    <div class="clear"></div>
+
+  </div>
+  {% block results %}
+  {% endblock %}
+{% endblock %}

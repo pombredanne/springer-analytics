@@ -1,0 +1,56 @@
+/* root element for tabs  */
+ul.tabs { 
+    list-style:none; 
+    margin:0 !important; 
+    padding:0;		
+    height:30px;
+    padding-bottom: -1px;
+    border-bottom: 1px solid #666;
+}
+
+/* single tab */
+ul.tabs li { 
+    background-color: white;
+    float:left;	 
+    text-indent:0;
+    padding:0;
+    margin:0 !important;
+    list-style-image:none !important; 
+}
+
+/* link inside the tab */
+ul.tabs a { 
+    font-size:11px;
+    display:block;
+    height: 30px;  
+    line-height:30px;
+    width: 134px;
+    text-align:center;	
+    text-decoration:none;
+    color:#333;
+    padding:0px;
+    margin:0px;	
+    position:relative;
+    top:1px;
+    border: 1px none #666;
+    border-bottom-style: solid;
+}
+
+ul.tabs a:active {
+    outline:none;		
+}
+
+/* active tab uses a class name "current" */
+ul.tabs a.current, ul.tabs a.current:hover, ul.tabs li.current a {
+    border-left-style: solid;
+    border-right-style: solid;
+    border-top-style: solid;
+    border-bottom-style: none;
+    
+    cursor:default !important; 
+    color:#000 !important;
+}
+
+.panes .pane {
+    display: none; /* initially all panes are hidden */
+}

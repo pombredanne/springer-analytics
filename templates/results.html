@@ -1,0 +1,57 @@
+{% extends "search.html" %}
+
+{% block results %}
+  <div class="container_16">
+    <div class="grid_16">
+      <ul class="tabs">
+	<li><a href="#">Graphs</a></li>
+	<li><a href="#">Top Downloads</a></li>
+	<li><a href="#">Options</a></li>
+      </ul>
+    </div>
+    <div class="clear"></div>
+  </div>
+
+  <div class="panes" style="height: 100%">
+
+    <div style="height: 100%"><div style="height: 100%" class="subpane">
+      {% for summary in summaries %}
+      <div class='graph_holder'>
+	<div class="feature">feature</div>
+	<div class="graph"></div>
+      </div>
+      {% endfor %}
+    </div></div>
+
+    <div><div class="subpane">
+      <div class="container_16">
+	{% for top_download in top_downloads %}
+	<div class="grid_16"> {{ top_download }} </div>
+	{% endfor %}
+      </div>
+    </div></div>
+
+    <div><div class="subpane">
+      <div class="container_16">
+	<div class="grid_16">Graphs</div>
+	<div class="grid_14 prefix_2">
+	  <div class="option">
+	    X-Axis:
+	    <input type="radio" name="yaxis" onClick="xaxis='lin'; plotAll()"> Linear
+	    <input type="radio" name="yaxis" onClick="xaxis='log'; plotAll()" checked> Logarithmic
+	  </div>
+	</div>
+
+	<div class="clear"></div>
+      </div>
+    </div></div>
+
+  </div>
+
+  <script language="javascript" type="text/javascript">
+    $("ul.tabs").tabs("div.panes > div");
+    
+    var summaries = {{ summaries|tojson|safe }};
+    plotAll();
+  </script>
+{% endblock %}

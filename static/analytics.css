@@ -1,0 +1,29 @@
+html, body {
+    height: 100%;
+}
+
+#query, #submit {
+    width: 100%;
+}
+
+.graph_holder {
+    padding-left: 1%;
+    padding-right: 1%;
+    padding-top: 1%;
+    padding-bottom: 2%;
+    width: 98%;
+    height: 25%;
+}
+
+.feature {
+    text-align: center;
+}
+
+.graph {
+    width: 100%;
+    height: 100%;
+}
+
+.subpane {
+    padding-top: 1em;
+}
